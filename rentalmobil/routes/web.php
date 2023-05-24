@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MerkController;
 use App\Http\Controllers\MobilController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,4 @@ Route::get('/', function () {
 Route::get('/mobil', [MobilController::class, 'index']);
 Route::get('/mobil/create', [MobilController::class, 'create']); //memanggil form
 Route::post('/mobil/simpandata', [MobilController::class, 'store']); //mengirim request
+Route::get('/merk', [MerkController::class, 'index']);
