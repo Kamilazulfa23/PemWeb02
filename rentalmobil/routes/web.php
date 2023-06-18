@@ -34,3 +34,15 @@ Route::post('/mobil/simpan-data', [MobilController::class, 'store']); //mengirim
 Route::get('/merk', [MerkController::class, 'index']);
 Route::get('/merk/create', [MerkController::class, 'create']);
 Route::post('/merk/simpan-data', [MerkController::class, 'store']);
+
+Route::get('/merk/edit/{id}', [MerkController::class, 'edit']);
+Route::post('/merk/update/{id}', [MerkController::class, 'update']);
+Route::get('/merk/delate/{id}', [MerkController::class, 'delate']);
+
+Route::get('/tipe_mobil', [MerkController::class, 'index']);
+Route::get('/tipe_mobil/create', [MerkController::class, 'create']);
+Route::post('/tipe_mobil/simpan-data', [MerkController::class, 'store']);
+
+Route::get('/tipe_mobil/edit/{id}', [MerkController::class, 'edit']);
+Route::post('/tipe_mobil/update/{id}', [MerkController::class, 'update']);
+Route::get('/tipe_mobil/delate/{id}', [MerkController::class, 'delate']);

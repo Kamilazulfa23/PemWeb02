@@ -22,6 +22,29 @@ class MerkController extends Controller
         $merkData->merk = $request->merk;
         $merkData->save();
 
-        return redirect()->to('/merk')->with('success', 'Data berhasil disimpan');
+        return redirect()->to('/merk')->with('success', 'Data Merk berhasil disimpan');
+    }
+
+    function edit($id)
+    {
+        $merkData = Merk::find($id); // select * from merks where id = $id
+        return view('pages.merk.edit', ['merkData' => $merkData]);
+    }
+
+    function update($id, Request $request)
+    {
+        $merkData = Merk::find($id);
+        $merkData->merk = $request->merk;
+        $merkData->save();
+
+        return redirect()->to('/merk')->with('succes', 'Data berhasil diupdate');
+    }
+
+    function delate($id)
+    {
+        $merkData = Merk::find($id);
+        $merkData->delate();
+
+        return redirect()->to('/merk')->with('succes', 'Data merk berhasil dihapus');
     }
 }

@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Merk</h1>
+        <h1 class="mt-4">Tipe Mobil</h1>
         <div class="d-flex justify-content-between mb-3">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active">Data Merk</li>
+                <li class="breadcrumb-item active">Data Tipe Mobil</li>
             </ol>
-            <a href="/merk/create" class="btn btn-primary">Tambah Data</a>
+            <a href="/tipe_mobil/create" class="btn btn-primary">Tambah Data</a>
         </div>
         <div class="card shadow">
             <div class="card-body">
@@ -21,13 +21,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($merkData as $merk)
+                            @foreach ($tipeData as $tipe_mobil)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $merk->merk }}</td>
+                                    <td>{{ $tipe_mobil->tipe_mobil }}</td>
                                     <td>
-                                        <a href="/merk/edit/{{ $merk->id }}" class="btn btn-warning">Edit</a>
-                                        <a href="/merk/delate/{{ $merk->id }}" class="btn btn-danger">Hapus</a>
+                                        <a href="/tipe_mobil/edit/{{ $tipe_mobil->id }}" class="btn btn-warning">Edit</a>
+                                        <a href="/tipe_mobil/delate/{{ $tipe_mobil->id }}" class="btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>
                             @endforeach
