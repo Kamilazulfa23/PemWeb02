@@ -55,4 +55,28 @@ class MobilController extends Controller
         // return redirect()->to('/mobil')
         //     ->with('dataMobil', $this->arrayMobil);
     }
+
+    function edit($id)
+    {
+        $mobilData = Mobil::find($id);
+        $merkData = Merk::get();
+        $tipeMobilData = TipeMobil::get();
+        return view('pages.mobil.edit', ['mobilData' => $mobilData]);
+    }
+
+    function update($id, Request $request)
+    {
+        $mobilData = Mobil::find($id);
+        $mobilData->update($request->all());
+        $mobilData->save();
+
+        return redirect()->to('/mobil')->with('success', 'Data berhasil diubah');
+    }
+    function delete($id)
+    {
+        $mobilData = Mobil::find($id);
+        $mobilData->delete();
+
+        return redirect()->to('/mobil')->with('success', 'Data mobil berhasil dihapus');
+    }
 }
